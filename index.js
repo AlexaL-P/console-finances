@@ -95,6 +95,11 @@ var decrease = 0
 
 months = finances.length
 
+for (let i = 0; i < finances.length; i++) {
+  total += finances[i][1];
+}
+
+console.log(finances[1][1])
 
 console.log(
   " Financial Analysis \n" +
