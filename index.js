@@ -92,29 +92,37 @@ var total = 0
 var average = 0
 var increase = 0
 var decrease = 0
-changes = []
 
-
+// 'months' code
 months = finances.length
 
+// 'total' code
 for (let i = 0; i < finances.length; i++) {
   total += finances[i][1];
 }
 
+// returns the difference between months.
+// difference then appends as 3rd item in each month's array
 for (let i = 0; i < (finances.length - 1); i++) {
   let x = finances[i][1];
   let y = finances[(i + 1)][1];
   finances[(i + 1)][2] = (x - y) * -1;
 }
 
-console.table(finances)
+// 'average' code
+var runningAverage = 0
+for (let i = 0; i < (finances.length - 1); i++) {
+  runningAverage += ((finances[(i + 1)][2]))
+}
+average = (runningAverage / (finances.length - 1)).toFixed(2)
+
 
 console.log(
   " Financial Analysis \n" +
   "--------------------\n" +
   "Total Months: " + months + "\n" +
-  "Closing Balance: " + total + "\n" +
-  "Average Change: " + average + "\n" +
-  "Greatest Increase: " + increase + "\n" +
-  "Greatest Decrease: " + decrease + "\n"
+  "Closing Balance: $" + total + "\n" +
+  "Average Change: $" + average + "\n" +
+  "Greatest Increase: $" + increase + "\n" +
+  "Greatest Decrease: $" + decrease + "\n"
 )
