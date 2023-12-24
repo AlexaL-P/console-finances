@@ -138,6 +138,6 @@ console.log(
   "Total Months: " + months + "\n" +
   "Closing Balance: $" + total + "\n" +
   "Average Change: $" + average + "\n" +
-  "Greatest Increase: $" + increase + "\n" +
-  "Greatest Decrease: $" + decrease + "\n"
+  "Greatest Increase: " + increase[0] + " ($" + increase[1] + ")" + "\n" +
+  "Greatest Decrease: " + decrease[0] + " ($" + decrease[1] + ")" + "\n"
 )
