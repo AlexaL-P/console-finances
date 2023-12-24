@@ -92,6 +92,8 @@ var total = 0
 var average = 0
 var increase = 0
 var decrease = 0
+changes = []
+
 
 months = finances.length
 
@@ -99,7 +101,13 @@ for (let i = 0; i < finances.length; i++) {
   total += finances[i][1];
 }
 
-console.log(finances[1][1])
+for (let i = 0; i < (finances.length - 1); i++) {
+  let x = finances[i][1];
+  let y = finances[(i + 1)][1];
+  finances[(i + 1)][2] = (x - y) * -1;
+}
+
+console.table(finances)
 
 console.log(
   " Financial Analysis \n" +
