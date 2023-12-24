@@ -90,8 +90,8 @@ var finances = [
 var months = 0
 var total = 0
 var average = 0
-var increase = 0
-var decrease = 0
+var increase = ['', 0]
+var decrease = ['', 0]
 
 // 'months' code
 months = finances.length
@@ -118,11 +118,19 @@ average = (runningAverage / (finances.length - 1)).toFixed(2)
 
 // 'increase' code
 for (let i = 0; i < (finances.length - 1); i++) {
-  if (increase < ((finances[(i + 1)][2]))) {
-    increase = ((finances[(i + 1)][2]));
+  if (increase[1] < ((finances[(i + 1)][2]))) {
+    increase[1] = ((finances[(i + 1)][2]));
+    increase[0] = ((finances[(i + 1)][0]));
   }
 }
 
+// 'decrease' code
+for (let i = 0; i < (finances.length - 1); i++) {
+  if (decrease[1] > ((finances[(i + 1)][2]))) {
+    decrease[1] = ((finances[(i + 1)][2]));
+    decrease[0] = ((finances[(i + 1)][0]));
+  }
+}
 
 console.log(
   " Financial Analysis \n" +
