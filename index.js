@@ -116,6 +116,13 @@ for (let i = 0; i < (finances.length - 1); i++) {
 }
 average = (runningAverage / (finances.length - 1)).toFixed(2)
 
+// 'increase' code
+for (let i = 0; i < (finances.length - 1); i++) {
+  if (increase < ((finances[(i + 1)][2]))) {
+    increase = ((finances[(i + 1)][2]));
+  }
+}
+
 
 console.log(
   " Financial Analysis \n" +
